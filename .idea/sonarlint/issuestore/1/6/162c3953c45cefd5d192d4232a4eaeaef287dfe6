@@ -1,0 +1,22 @@
+
+S	java:S106"9Replace this use of System.out or System.err by a logger.(œÝÊÕÿÿÿÿÿ
+_
+java:S1854."BRemove this useless assignment to local variable "transcriptList".(ÆçŠž8©…ÎŸ¿0
+P
+java:S1854v":Remove this useless assignment to local variable "reslut".(Ø‰¯²
+N	java:S106%"9Replace this use of System.out or System.err by a logger.(Æ¼°„
+W	java:S125/"<This block of commented-out lines of code should be removed.(ÎÂì8ª…ÎŸ¿0
+]	java:S125L"<This block of commented-out lines of code should be removed.(Âíùªÿÿÿÿÿ8“¿ÍŸ¿0
+V
+java:S1612R"@Replace this lambda with method reference 'System.out::println'.(çíÍ‡
+N	java:S106R"9Replace this use of System.out or System.err by a logger.(çíÍ‡
+S	java:S106]"9Replace this use of System.out or System.err by a logger.(òˆ‹üÿÿÿÿ
+V	java:S125a"<This block of commented-out lines of code should be removed.(éË¶»üÿÿÿÿ
+[
+java:S1612e"@Replace this lambda with method reference 'System.out::println'.(–ÛÝüÿÿÿÿ
+S	java:S106e"9Replace this use of System.out or System.err by a logger.(–ÛÝüÿÿÿÿ
+U
+java:S1612z"@Replace this lambda with method reference 'System.out::println'.(™‘ËM
+M	java:S106z"9Replace this use of System.out or System.err by a logger.(™‘ËM
+F
+java:S1128"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ

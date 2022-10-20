@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="MyStudentMgmtApp" />
+        <module name="eRegistrar" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="eRegistrar" target="17" />
+      <module name="fairfieldlibraryapp" target="17" />
+      <module name="lesson10_spring_webapp" target="17" />
+      <module name="MyStudentMgmtApp" target="17" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="MyStudentMgmtApp" options="-parameters" />
+      <module name="eRegistrar" options="-parameters" />
+      <module name="fairfieldlibraryapp" options="-parameters" />
+      <module name="lesson10_spring_webapp" options="-parameters" />
+    </option>
+  </component>
+</project>
