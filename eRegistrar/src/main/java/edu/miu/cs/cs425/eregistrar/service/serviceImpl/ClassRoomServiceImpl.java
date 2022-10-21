@@ -6,6 +6,8 @@ import edu.miu.cs.cs425.eregistrar.service.ClassRoomService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @AllArgsConstructor
 public class ClassRoomServiceImpl implements ClassRoomService {
@@ -13,7 +15,7 @@ public class ClassRoomServiceImpl implements ClassRoomService {
     private ClassRoomRepository classRoomRepo;
 
     @Override
-    public Iterable<ClassRoom> getAllClassRoom() {
+    public List<ClassRoom> getAllClassRoom() {
         return classRoomRepo.findAll();
     }
 

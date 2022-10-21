@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="https://www.theamleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>eRegistrar - List of Students</title>
+    <!-- CSS only -->
+    <link rel="stylesheet" href="./mystyle.css">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+</head>
+<body>
+<header th:replace="fragments/header :: header"></header>
+<br>
+    <div class="container">
+        <div class="row">
+        <h2> List of registered Students</h2>
+    </div>
+<!-----Add Student Button--->
+        <br>
+        <div class="row">
+            <div class="col-lg-3">
+                <a th:href="@{/eregistrar/student/students/new}" class="btn btn-primary btn-sm mb-3">Add Student</a>
+            </div>
+        </div>
+        <div>
+        <input  style="border-radius: 5px;padding: 4px" type="text"  value="Search">
+            <button class="btn btn-primary">Search</button>
+        </div>
+        <br>
+        <section>
+            <table class="table table-striped table-bordered">
+
+                <thead class="thead-dark">
+                <th scope="col">#</th>
+                <th scope="col">Student Number</th>
+                <th scope="col">First Name</th>
+                <th scope="col">Middle Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">CGPA</th>
+                <th scope="col"></th>
+                <th scope="col">Is International</th>
+                <th scope="col">Update</th>
+                <th scope="col">Delete</th>
+                </thead>
+                <tbody>
+                <tr  scope="row" th:each ="student, counter: ${students}">
+                    <th scope="row" th:text="${counter.count} + ' . ' "></th>
+                    <td th:text= "${student.studentNumber}"></td>
+                    <td th:text= "${student.firstName}"></td>
+                    <td th:text= "${student.middleName}"></td>
+                    <td th:text= "${student.lastName}"></td>
+                    <td th:text= "${student.cgpa}"></td>
+                    <td th:text= "${student.dateOfEnrollment}"></td>
+                    <td th:text= "${student.isInternational}"></td>
+                    <td>
+                        <a
+                        class="btn btn-primary"> Update</a>
+                    </td>
+                    <td>
+                        <a class="btn btn-danger">Delete</a>
+                    </td>
+
+                </tr>
+                </tbody>
+            </table>
+        </section>
+</div>
+
+</body>
+</html>

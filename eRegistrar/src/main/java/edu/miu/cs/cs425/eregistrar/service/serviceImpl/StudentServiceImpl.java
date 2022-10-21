@@ -3,8 +3,11 @@ package edu.miu.cs.cs425.eregistrar.service.serviceImpl;
 import edu.miu.cs.cs425.eregistrar.model.Student;
 import edu.miu.cs.cs425.eregistrar.repository.StudentRepository;
 import edu.miu.cs.cs425.eregistrar.service.StudentService;
+import net.bytebuddy.TypeCache;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 
 
 @Service
@@ -17,8 +20,13 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
-    public Iterable<Student> getStudents() {
-        return studentRepo.findAll();
+    public List<Student> getStudents() {
+        return studentRepo.findAll(Sort.by(Sort.Direction.ASC,"lastName"));
+    }
+
+    @Override
+    public List<Student> searchStudents(String name) {
+        return studentRepo.searchStudentByFirstName(name);
     }
 
     @Override

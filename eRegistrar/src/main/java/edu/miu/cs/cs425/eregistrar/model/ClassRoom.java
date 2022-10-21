@@ -9,7 +9,6 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
@@ -20,12 +19,12 @@ public class ClassRoom {
     @Column(nullable = false)
     private String buildingName;
     private String roomNumber;
-    @OneToMany(mappedBy = "classRoom")
-    private List<Student> students;
+//    @OneToMany(mappedBy = "classRoom")
+//    private List<Student> students;
 
-    public ClassRoom(String buildingName, String roomNumber, List<Student> students) {
-        this.buildingName = buildingName;
-        this.roomNumber = roomNumber;
-        this.students = students;
-    }
+//    public ClassRoom(String buildingName, String roomNumber, List<Student> students) {
+//        this.buildingName = buildingName;
+//        this.roomNumber = roomNumber;
+//        this.students = students;
+//    }
 }

@@ -6,6 +6,9 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 
 @Entity
@@ -19,44 +22,41 @@ public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long studentId;
-    @Column(name="student_number", nullable = false, unique = true)
+    //studentNumber is required
+    @Column(name="student_number", nullable = false, unique = true)//store in database
+    //This is stored in memory
+//    @NotNull(message = "Student number is not null")
+//    @NotEmpty(message = "Student number can not empty or null")//""
+    @NotBlank(message ="Student number can not be blank  spaces or empty or null" )
     private String StudentNumber;
     @Column(nullable = false)
+    @NotBlank(message ="firstName can not be blank  spaces or empty or null" )
     private String firstName;
+    @Column(nullable = true)
     private String middleName;
+
+    @NotBlank(message ="lastName can not be blank  spaces or empty or null" )
     @Column(nullable = false)
     private String lastName;
     private Double cgpa;
+
+    @NotNull(message = "Enroll Date can't be null")
+    @Column(nullable = false)
     private LocalDate dateOfEnrollment;
-@JoinColumn(name = "transcript_id", nullable = false,unique = true)
-@OneToOne
-    private Transcript transcript;
-    @ManyToOne
-    @JoinColumn(name = "class_id")
-private ClassRoom classRoom;
 
-    public Student(Long studentId, String studentNumber, String firstName, String middleName, String lastName, Double cgpa, LocalDate dateOfEnrollment,
-                   Transcript transcript) {
-        this.studentId = studentId;
-        StudentNumber = studentNumber;
-        this.firstName = firstName;
-        this.middleName = middleName;
-        this.lastName = lastName;
-        this.cgpa = cgpa;
-        this.dateOfEnrollment = dateOfEnrollment;
-        this.transcript = transcript;
+    @Column(nullable = false)
+    @NotBlank(message ="isInternational can not be blank  spaces or empty or null" )
+    private String isInternational;
 
-    }
     public Student( String studentNumber, String firstName, String middleName, String lastName, Double cgpa, LocalDate dateOfEnrollment,
-                   Transcript transcript) {
+                    String isInternational) {
         StudentNumber = studentNumber;
         this.firstName = firstName;
         this.middleName = middleName;
         this.lastName = lastName;
         this.cgpa = cgpa;
         this.dateOfEnrollment = dateOfEnrollment;
-        this.transcript = transcript;
-
+        this.isInternational=isInternational;
     }
 
 

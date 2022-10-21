@@ -19,11 +19,7 @@ oMyStudentMgmtApp/src/main/java/edu/miu/cs/cs425/studentmgmt/model/service/servi
 _MyStudentMgmtApp/src/main/java/edu/miu/cs/cs425/studentmgmt/model/service/ClassRoomService.java,d\4\d4d81b08630de8829f4592c0c0f1ea085aac2a57
 ê
 `MyStudentMgmtApp/src/main/java/edu/miu/cs/cs425/studentmgmt/model/service/TranscriptService.java,6\2\62c6276443ae15779205bfb9d4816bfc723524e3
-Ñ
-TMyStudentMgmtApp/src/main/java/edu/miu/cs/cs425/studentmgmt/model/model/Student.java,2\b\2b931079bac6ff8a44365774e4928f0eb8085b60
 á
 WMyStudentMgmtApp/src/main/java/edu/miu/cs/cs425/studentmgmt/model/model/Transcript.java,6\6\6688b2a47adf31d13e3f12e1d516744b772bed9d
-í
-bMyStudentMgmtApp/src/main/java/edu/miu/cs/cs425/studentmgmt/model/MyStudentMgmtAppApplication.java,1\6\162c3953c45cefd5d192d4232a4eaeaef287dfe6
 Ü
 VMyStudentMgmtApp/src/main/java/edu/miu/cs/cs425/studentmgmt/model/model/ClassRoom.java,5\2\522f268ae5c65b1532489d0ae406616038af36c5

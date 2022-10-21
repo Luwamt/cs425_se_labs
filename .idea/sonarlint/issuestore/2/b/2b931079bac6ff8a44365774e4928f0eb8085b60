@@ -1,5 +1,0 @@
-
-[	java:S107$"AConstructor has 8 parameters, which is greater than 7 authorized.(ïøÔíøÿÿÿÿ
-r	java:S116"XRename this field "StudentNumber" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(şÕÌÿÿÿÿÿ
-M
-java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8İğ©Ÿ¿0

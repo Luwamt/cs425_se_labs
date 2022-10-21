@@ -8,7 +8,6 @@ import lombok.Setter;
 import javax.persistence.*;
 
 @Entity
-@AllArgsConstructor
 @NoArgsConstructor
 @Setter
 @Getter
@@ -20,8 +19,8 @@ public class Transcript {
     @Column(nullable = false)
     private String degreeTitle;
 
-    @OneToOne(mappedBy = "transcript", fetch = FetchType.EAGER,cascade = CascadeType.ALL)
-    private Student student;
+//    @OneToOne(mappedBy = "transcript", fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+//    private Student student;
 
     public Transcript( String degreeTitle) {
         this.degreeTitle = degreeTitle;

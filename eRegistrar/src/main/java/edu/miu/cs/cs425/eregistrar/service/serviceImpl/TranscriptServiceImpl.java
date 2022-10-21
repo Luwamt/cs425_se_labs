@@ -5,6 +5,8 @@ import edu.miu.cs.cs425.eregistrar.repository.TranscriptRepository;
 import edu.miu.cs.cs425.eregistrar.service.TranscriptService;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 
 public class TranscriptServiceImpl implements TranscriptService {
@@ -21,7 +23,7 @@ public class TranscriptServiceImpl implements TranscriptService {
     }
 
     @Override
-    public Iterable<Transcript> getTranscript() {
+    public List<Transcript> getTranscript() {
         return transcriptRepo.findAll();
     }
 
