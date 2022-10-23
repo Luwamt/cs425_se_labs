@@ -1,5 +1,6 @@
 package edu.miu.cs.cs425.eregistrarwebapi.service.serviceImpl;
 
+import edu.miu.cs.cs425.eregistrarwebapi.dto.StudentDto;
 import edu.miu.cs.cs425.eregistrarwebapi.exception.MyException;
 import edu.miu.cs.cs425.eregistrarwebapi.model.Student;
 import edu.miu.cs.cs425.eregistrarwebapi.repository.StudentRepository;
@@ -34,36 +35,44 @@ public class StudentServiceImpl implements StudentService {
         return studentRepo.save(student);
     }
 
-    //    Student student = new Student();
-//    var  std = studentRepo.findById(studentId).orElse(null);
-//        if(std != null){
-//        student.setStudentNumber(updStudent.getStudentNumber());
-//        student.setFirstName(updStudent.getFirstName());
-//        student.setMiddleName(updStudent.getMiddleName());
-//        student.setLastName(updStudent.getLastName());
-//        student.setCgpa(updStudent.getCgpa());
-//        student.setDateOfEnrollment(updStudent.getDateOfEnrollment());
-//        student.setIsInternational(updStudent.getIsInternational());
-//        studentRepo.save(std);
-//    }
-//        else  throw new NullPointerException("No such Student");
-//}
     @Override
-    public void updateStudent(Long studentId, Student updStudent) {
-        Student student = new Student();
-        var std = studentRepo.findById(studentId).orElse(null);
-        if (std != null) {
-            student.setStudentNumber(updStudent.getStudentNumber());
-            student.setFirstName(updStudent.getFirstName());
-            student.setMiddleName(updStudent.getMiddleName());
-            student.setLastName(updStudent.getLastName());
-            student.setCgpa(updStudent.getCgpa());
-            student.setDateOfEnrollment(updStudent.getDateOfEnrollment());
-            student.setIsInternational(updStudent.getIsInternational());
-            studentRepo.save(std);
-        }
-        else  throw new NullPointerException("No such Student");;
+    public Student updateStudent(Long studentId, Student updStudent) {
+        var std = Student.build(studentId,
+                updStudent.getStudentNumber(), updStudent.getFirstName(), updStudent.getMiddleName(),
+                updStudent.getLastName(), updStudent.getCgpa(), updStudent.getDateOfEnrollment(),
+                updStudent.getIsInternational());
+
+        return studentRepo.save(std);
     }
+
+
+//    public Student updateStudent(Long studentId, StudentDto updStudent) {
+//        //Student student = new Student();
+//        var std = Student.build(studentId,
+//                updStudent.getStudentNumber(), updStudent.getFirstName(), updStudent.getMiddleName(),
+//                updStudent.getLastName(), updStudent.getCgpa(), updStudent.getDateOfEnrollment(),
+//                updStudent.getIsInternational());
+//
+//            return studentRepo.save(std);
+//    }
+
+//    @Override
+//    public Student updateStudent(Long studentId, Student updStudent) {
+//        Student student = new Student();
+//        var std = studentRepo.findById(studentId).orElse(null);
+//        if (std != null) {
+//            student.setStudentNumber(updStudent.getStudentNumber());
+//            student.setFirstName(updStudent.getFirstName());
+//            student.setMiddleName(updStudent.getMiddleName());
+//            student.setLastName(updStudent.getLastName());
+//            student.setCgpa(updStudent.getCgpa());
+//            student.setDateOfEnrollment(updStudent.getDateOfEnrollment());
+//            student.setIsInternational(updStudent.getIsInternational());
+//            studentRepo.save(std);
+//        }
+//         throw new NullPointerException("No such Student");
+//    }
+
 
     @Override
     public Student getStudentById(Long studentId) throws MyException {

@@ -12,7 +12,7 @@ import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 
 @Entity
-@AllArgsConstructor
+@AllArgsConstructor(staticName = "build")
 @Getter
 @Setter
 @NoArgsConstructor
