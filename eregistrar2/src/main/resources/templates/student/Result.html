@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Show List of Students</title>
+    <link rel="stylesheet" href="/css/myStyle.css">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+</head>
+<body>
+<header th:replace="fragments/header::header"></header>
+<br>
+<div class="container">
+    <div class="row">
+        <h2> List of registered Students</h2>
+    </div>
+
+    <br>
+    <div class="ctn-btn">
+        <section>
+            <h2>Students Search result List for'[[${searchString}]]'</h2>
+            <form action="/eregistrar/student/search" method="get" th:object="${searchString}">
+                <div class="form-group mb-4 col-4">
+                    <label>Search by firstName or LastName</label>
+                    <input style="border-radius: 5px;padding: 6px" type="search"
+                           name="searchString" id="searchString" th:value="${searchString}" placeholder="Search..."
+                    >
+                    <button type="submit" class="btn btn-primary btn-mb mb-9">Search</button>
+                    <!--        <a  style="padding: 6px" th:href="@{/eregistrar/student/search}"-->
+                    <!--           class="btn btn-primary btn-mb mb-9">Search</a></td>-->
+                </div>
+            </form>
+        </section>
+        <br>
+        <!-----Add Student Button--->
+        <div class="row">
+            <div class="col-lg-9">
+                <a th:href="@{/eregistrar/student/new}" class="btn btn-primary btn-sm mb-6">Add Student</a>
+            </div>
+        </div>
+    </div>
+    <br>
+    <section>
+        <table class="table table-striped table-bordered">
+            <thead >
+            <th>#</th>
+            <th>Student Number</th>
+            <th>First Name</th>
+            <th>Middle Name</th>
+            <th>Last Name</th>
+            <th>CGPA</th>
+            <th>Enrollment Date</th>
+            <th>Is International</th>
+            <th>Update</th>
+            <th>Delete</th>
+            </thead>
+            <tbody>
+            <tr th:each="student, counter : ${student}">
+                <th scope="row" th:text="${counter.count} + ' . '"></th>
+                <td th:text="${student.getStudentNumber()}"></td>
+                <td th:if="${student.getFirstName() !=null}">
+                    <span th:text="${student.getFirstName()} + ','+${student.getFirstName()}" ></span> <br>
+                </td>
+                <td th:text="${student.getMiddleName()}"></td>
+                <td th:text="${student.getLastName()}"></td>
+                <td th:text="${student.getCgpa()}"></td>
+                <td th:text="${student.getDateOfEnrollment()}"></td>
+                <td th:text="${student.getIsInternational()}"></td>
+                <td>
+                    <a th:href="@{/eregistrar/student/edit/{id}(id=${student.getStudentId()})}"
+                       class="btn btn-primary btn-sm mb-3">Update</a></td>
+                <td>
+                    <a th:href="@{/eregistrar/student/delete/{id}(id=${student.getStudentId()})}"
+                       class="btn btn-danger btn-sm mb-3">Delete</a></td>
+            </tr>
+            <tr th:if="${student.isEmpty()}">
+                <td colspan="3" th:align="center"> No student found</td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
+    <section style="margin-top: 1em">
+        <!------Pagination----------->
+        <table border="1" cellspacing="5" cellpadding="5">
+            <tbody>
+            <tr>
+                <th scope="row">Pages:</th>
+                <td th:each="pageCount : ${#numbers.sequence(1, students.totalPages)}">
+                    <a th:if="${currentPageNo == pageCount-1}" th:href="@{/eregistrar/student/list(pageNo=${pageCount-1})}"
+                       th:text="${pageCount}" style="padding: 100%; background-color:aqua;"></a>
+                    <a th:if="${currentPageNo != pageCount-1}" th:href="@{/eregistrar/student/list(pageNo=${pageCount-1})}"
+                       th:text="${pageCount}"></a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
+</div>
+</body>
+</html>

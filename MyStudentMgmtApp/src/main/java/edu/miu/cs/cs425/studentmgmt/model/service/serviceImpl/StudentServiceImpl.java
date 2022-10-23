@@ -37,6 +37,11 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
+    public Student updateStudent(Student student) {
+        return studentRepo.save(student);
+    }
+
+    @Override
     public Student getStudentById(Long studentId) {
         return studentRepo.findById(studentId).orElse(null);
 

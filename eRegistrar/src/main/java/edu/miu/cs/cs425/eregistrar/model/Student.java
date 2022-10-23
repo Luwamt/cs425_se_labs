@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
@@ -28,7 +29,7 @@ public class Student {
 //    @NotNull(message = "Student number is not null")
 //    @NotEmpty(message = "Student number can not empty or null")//""
     @NotBlank(message ="Student number can not be blank  spaces or empty or null" )
-    private String StudentNumber;
+    private String studentNumber;
     @Column(nullable = false)
     @NotBlank(message ="firstName can not be blank  spaces or empty or null" )
     private String firstName;
@@ -42,6 +43,8 @@ public class Student {
 
     @NotNull(message = "Enroll Date can't be null")
     @Column(nullable = false)
+//    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @DateTimeFormat(pattern = "MM-dd-yyyy")
     private LocalDate dateOfEnrollment;
 
     @Column(nullable = false)
@@ -50,7 +53,7 @@ public class Student {
 
     public Student( String studentNumber, String firstName, String middleName, String lastName, Double cgpa, LocalDate dateOfEnrollment,
                     String isInternational) {
-        StudentNumber = studentNumber;
+        studentNumber = studentNumber;
         this.firstName = firstName;
         this.middleName = middleName;
         this.lastName = lastName;

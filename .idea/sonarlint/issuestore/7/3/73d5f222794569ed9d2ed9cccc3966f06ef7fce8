@@ -1,0 +1,7 @@
+
+
+java:S41658"kRemove this useless assignment; "studentNumber" already holds the assigned value along all execution paths.(âÄ„Ïüÿÿÿÿ8½½“â¿0
+Q
+java:S16568"/Remove or correct this useless self-assignment.(âÄ„Ïüÿÿÿÿ8Â½“â¿0
+^
+java:S1128"BRemove this unused import 'javax.validation.constraints.NotEmpty'.(ÿÿör8Â½“â¿0

@@ -114,13 +114,23 @@ public class MyStudentMgmtAppApplication implements CommandLineRunner {
         std4.setClassRoom(classRoom4);
         List<ClassRoom> classRoomList = Arrays.asList(classRoom1,classRoom2,classRoom3,classRoom4);
 
-        for (ClassRoom rooms: classRoomList){
-            ClassRoom reslut =classRoomService.addNewClassRoom(rooms) ;
-        }
+//        for (ClassRoom rooms: classRoomList){
+//            ClassRoom reslut =classRoomService.addNewClassRoom(rooms) ;
+//        }
 
         classRoomService.getAllClassRoom().forEach(
                 room->System.out.println(room)
         );
 
+        var student1 = studentService.getStudentById(1L);
+        var student2 = studentService.getStudentById(2L);
+        var classroom2 = classRoomService.getClassRoomById(2L);
+        assignStudentsToClassroom(student1, classroom2);
+        assignStudentsToClassroom(student2, classroom2);
+    }
+
+    private void assignStudentsToClassroom(Student student, ClassRoom classRoom) {
+        student.setClassRoom(classRoom);
+        studentService.updateStudent(student);
     }
 }

@@ -19,7 +19,7 @@ public class ClassRoomServiceImpl implements ClassRoomService {
 
     @Override
     public ClassRoom getClassRoomById(Long classId) {
-        return getClassRoomById(classId);
+        return classRoomRepo.findById(classId).orElse(null);
     }
 
     @Override
