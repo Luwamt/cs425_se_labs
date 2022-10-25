@@ -1,0 +1,6 @@
+
+[
+java:S4684,"@Replace this persistent entity with a simple POJO or DTO object.(¬À÷ÿþÿÿÿÿ
+]	java:S125&"<This block of commented-out lines of code should be removed.(°Ðí ûÿÿÿÿ8ÜŠÕ¾À0
+¬
+java:S11307"Remove the declaration of thrown exception 'edu.miu.cs.cs425.eregistrarwebapi.exception.MyException', as it cannot be thrown from method's body.(ë¾»·ýÿÿÿÿ
