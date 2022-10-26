@@ -27,7 +27,8 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public List<Student> searchStudents(String name) {
-        return studentRepo.searchStudentByFirstName(name);
+        return studentRepo.searchStudentByFirstNameContainingIgnoreCaseOrLastNameContainingIgnoreCase(
+                name,name);
     }
 
     @Override
@@ -35,26 +36,26 @@ public class StudentServiceImpl implements StudentService {
         return studentRepo.save(student);
     }
 
-    @Override
-    public Student updateStudent(Long studentId, Student updStudent) {
-        var std = Student.build(studentId,
-                updStudent.getStudentNumber(), updStudent.getFirstName(), updStudent.getMiddleName(),
-                updStudent.getLastName(), updStudent.getCgpa(), updStudent.getDateOfEnrollment(),
-                updStudent.getIsInternational());
-
-        return studentRepo.save(std);
-    }
-
-
-//    public Student updateStudent(Long studentId, StudentDto updStudent) {
-//        //Student student = new Student();
+//    @Override
+//    public Student updateStudent(Long studentId, Student updStudent) {
 //        var std = Student.build(studentId,
 //                updStudent.getStudentNumber(), updStudent.getFirstName(), updStudent.getMiddleName(),
 //                updStudent.getLastName(), updStudent.getCgpa(), updStudent.getDateOfEnrollment(),
 //                updStudent.getIsInternational());
 //
-//            return studentRepo.save(std);
+//        return studentRepo.save(std);
 //    }
+
+@Override
+    public Student updateStudent(Long studentId, StudentDto updStudent) {
+        //Student student = new Student();
+        var std = Student.build(studentId,
+                updStudent.getStudentNumber(),updStudent.getFirstName(), updStudent.getMiddleName(),
+                updStudent.getLastName(), updStudent.getCgpa(), updStudent.getDateOfEnrollment(),
+                updStudent.getIsInternational());
+
+            return studentRepo.save(std);
+    }
 
 //    @Override
 //    public Student updateStudent(Long studentId, Student updStudent) {

@@ -61,8 +61,6 @@ eeRegistrarWebAPI/src/main/java/edu/miu/cs/cs425/eregistrarwebapi/repository/Tra
 _eRegistrarWebAPI/src/main/java/edu/miu/cs/cs425/eregistrarwebapi/service/TranscriptService.java,b\0\b05f2e3b1bd30acce81317d19c959aeced93ef3b
 ž
 neRegistrarWebAPI/src/main/java/edu/miu/cs/cs425/eregistrarwebapi/service/serviceImpl/ClassRoomServiceImpl.java,1\7\176c7446cb64415ece8143a26d49f18b8d67804e
-Ÿ
-oeRegistrarWebAPI/src/main/java/edu/miu/cs/cs425/eregistrarwebapi/service/serviceImpl/TranscriptServiceImpl.java,9\1\916061fd0bc044700a218b1d614eeb11bbe2d44c
 B
 eRegistrar/pom.xml,2\8\28e7d1b1f37bf8235df915e69a91cb92fb97df62
 H
@@ -79,8 +77,6 @@ C
 eregistrar2/HELP.md,b\3\b3e1c65b2264aa6dc80a17c1d5685ced03602206
 {
 Keregistrar2/src/main/java/miu/edu/cs/cs425/eregistrar2/model/ClassRoom.java,f\e\fe32dddc3a2b0e469583d7721aa7269937c6ff25
-Š
-Zeregistrar2/src/main/java/miu/edu/cs/cs425/eregistrar2/repository/ClassRoomRepository.java,b\a\ba2f326d0352e5e001643b2c73814142b6ed1d4c
 ‹
 [eregistrar2/src/main/java/miu/edu/cs/cs425/eregistrar2/repository/TranscriptRepository.java,9\a\9a0e9f65afb420c220813646285f8e2f17a80f4c
 …
@@ -91,5 +87,11 @@ Teregistrar2/src/main/java/miu/edu/cs/cs425/eregistrar2/service/ClassRoomService
 eeregistrar2/src/main/java/miu/edu/cs/cs425/eregistrar2/service/serviceImpl/TranscriptServiceImpl.java,6\a\6ae0d4f9578b6df8f07dff6fbbd7d74ff2a7f31d
 ”
 deregistrar2/src/main/java/miu/edu/cs/cs425/eregistrar2/service/serviceImpl/ClassRoomServiceImpl.java,e\4\e40e9ecbba599067749221fe149224bf05773c77
-‰
-Yeregistrar2/src/main/java/miu/edu/cs/cs425/eregistrar2/controller/HomePageController.java,e\5\e5abd8b5c0023a9b70686dc590e8af5834c83af3
+“
+ceRegistrarWebAPI/src/main/java/edu/miu/cs/cs425/eregistrarwebapi/advice/ExceptionHandlerWebApi.java,f\7\f70b04f6f92ec8516fc7313eb5e0633b1e1c8636
+„
+TeRegistrarWebAPI/src/main/java/edu/miu/cs/cs425/eregistrarwebapi/dto/StudentDto.java,d\b\db73dcf5e67a4b5ebf794b01f27ba457be1f21d4
+Ÿ
+oeRegistrarWebAPI/src/main/java/edu/miu/cs/cs425/eregistrarwebapi/service/serviceImpl/TranscriptServiceImpl.java,9\1\916061fd0bc044700a218b1d614eeb11bbe2d44c
+‘
+aeRegistrarWebAPI/src/main/java/edu/miu/cs/cs425/eregistrarwebapi/ERegistrarWebApiApplication.java,5\7\57ae72d3fa6948e613f39532111e2def5eb5e7f5

@@ -9,15 +9,19 @@
         <outputRelativeToContentRoot value="true" />
         <module name="eregistrar2" />
         <module name="MyStudentMgmtApp" />
+        <module name="harries" />
         <module name="eRegistrar" />
+        <module name="eregistrar_webapi_security" />
         <module name="eRegistrarWebAPI" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="eRegistrar" target="17" />
       <module name="eregistrar2" target="17" />
+      <module name="eregistrar_webapi_security" target="17" />
       <module name="eRegistrarWebAPI" target="17" />
       <module name="fairfieldlibraryapp" target="17" />
+      <module name="harries" target="17" />
       <module name="lesson10_spring_webapp" target="17" />
       <module name="MyStudentMgmtApp" target="17" />
     </bytecodeTargetLevel>
@@ -28,7 +32,9 @@
       <module name="eRegistrar" options="-parameters" />
       <module name="eRegistrarWebAPI" options="-parameters" />
       <module name="eregistrar2" options="-parameters" />
+      <module name="eregistrar_webapi_security" options="-parameters" />
       <module name="fairfieldlibraryapp" options="-parameters" />
+      <module name="harries" options="-parameters" />
       <module name="lesson10_spring_webapp" options="-parameters" />
     </option>
   </component>

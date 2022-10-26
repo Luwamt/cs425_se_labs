@@ -20,6 +20,7 @@
             <p class="textpar">Fields marked with asterisks (<span class="asterisk">*</span>) are required</p>
             <div class="card-body">
                     <form action="/eregistrar/student/new" method="post" th:object="${student}">
+                        <input  name="studentId" type="hidden" th:value="${student.studentId}">
                     <div class="form-group">
                         <label for="studentNumber">Student Number<span class="asterisk">*</span> </label>
                         <div>

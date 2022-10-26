@@ -19,7 +19,7 @@ public class StudentController {
 private StudentService studentService;
 
     @GetMapping(value = {"/list"})   // /eregistrar/student/list
-    public ModelAndView getListOfStudents(@RequestParam(defaultValue = "0") int pageNo){
+    public ModelAndView getListOfStudents(@RequestParam(defaultValue = "0") int  pageNo){
         var modelview = new ModelAndView();
         var students =studentService.getStudents(pageNo);
         modelview.addObject("students",students);
@@ -27,6 +27,14 @@ private StudentService studentService;
         modelview.setViewName("student/list");
         return  modelview;
     }
+//    @GetMapping(value = {"/pageNo"})
+//    public ModelAndView getPages(@RequestParam(defaultValue = "0") int  pageNo,int size){
+//        var modelview = new ModelAndView();
+//        var students= studentService.getPages(pageNo, size);
+//        modelview.addObject("currentPageNo",pageNo);
+//        modelview.setViewName("student/list");
+//        return  modelview;
+//    }
     @GetMapping(value={"/new"})
     public String registerNewStudentForm(Model model){
         var newStudent =new Student();
@@ -53,11 +61,11 @@ private StudentService studentService;
         }
         return "redirect:/eregistrar/student/list";
     }
-    @GetMapping(value = {"/search"})///eregistrar/student/search?searchString=lily
+    @GetMapping(value = {"/search"}) ///eregistrar/student/search?searchString=lily
     public ModelAndView searchStudentsByName(@RequestParam String searchString) {
         var modelAndView = new ModelAndView();
-        var student = studentService.searchStudents(searchString );
-        modelAndView.addObject("student", student);
+        var students = studentService.searchStudents(searchString );
+        modelAndView.addObject("students", students);
         modelAndView.addObject("searchString", searchString);
         modelAndView.setViewName("student/Result");
         return modelAndView;

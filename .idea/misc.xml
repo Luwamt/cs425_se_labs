@@ -8,6 +8,8 @@
         <option value="$PROJECT_DIR$/eRegistrar/pom.xml" />
         <option value="$PROJECT_DIR$/eRegistrarWebAPI/pom.xml" />
         <option value="$PROJECT_DIR$/eregistrar2/pom.xml" />
+        <option value="$PROJECT_DIR$/eregistrar_webapi_security/pom.xml" />
+        <option value="$PROJECT_DIR$/harries/pom.xml" />
       </list>
     </option>
   </component>

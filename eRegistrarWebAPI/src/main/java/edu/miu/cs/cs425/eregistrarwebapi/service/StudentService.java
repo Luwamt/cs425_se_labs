@@ -10,7 +10,7 @@ public interface StudentService {
     List<Student> getStudents();
     List<Student> searchStudents(String name);
     Student addNewStudent(Student student);
-    Student updateStudent(Long studentId, Student updStudent);
+    Student updateStudent(Long studentId, StudentDto updStudent);
     Student getStudentById(Long studentId) throws MyException;
     void deleteStudent(Long studentId);
 }

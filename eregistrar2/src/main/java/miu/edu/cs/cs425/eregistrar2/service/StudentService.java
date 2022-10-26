@@ -6,7 +6,9 @@ import org.springframework.data.domain.Page;
 import java.util.List;
 
 public interface StudentService {
+    Page<Student> getPages(int pageNo, int size);
     Page<Student> getStudents(int pageNo);
+    //List<Student> getStudents(int pageNo);
  List<Student> searchStudents(String search1);
 //    List<Student> searchStudents(String search);
     Student addNewStudent(Student student);

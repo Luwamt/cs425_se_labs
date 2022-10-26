@@ -36,7 +36,7 @@ public class eRegistarWebAPISecurityConfig extends WebSecurityConfigurerAdapter 
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/fairfieldlibrary/api/service/public/**").permitAll()
+                .antMatchers("eregistrar/api/student/service").permitAll()
                 .anyRequest()
                 .authenticated()
                 .and()

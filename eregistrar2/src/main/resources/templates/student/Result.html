@@ -19,7 +19,7 @@
     <br>
     <div class="ctn-btn">
         <section>
-            <h2>Students Search result List for'[[${searchString}]]'</h2>
+<!--            <h2>Students Search result List for'[[${searchString}]]'</h2>-->
             <form action="/eregistrar/student/search" method="get" th:object="${searchString}">
                 <div class="form-group mb-4 col-4">
                     <label>Search by firstName or LastName</label>
@@ -56,11 +56,11 @@
             <th>Delete</th>
             </thead>
             <tbody>
-            <tr th:each="student, counter : ${student}">
+            <tr th:each="student, counter : ${students}">
                 <th scope="row" th:text="${counter.count} + ' . '"></th>
-                <td th:text="${student.getStudentNumber()}"></td>
+                <td th:text="${student.studentNumber}"></td>
                 <td th:if="${student.getFirstName() !=null}">
-                    <span th:text="${student.getFirstName()} + ','+${student.getFirstName()}" ></span> <br>
+                    <span th:text="${student.getFirstName()}" ></span> <br>
                 </td>
                 <td th:text="${student.getMiddleName()}"></td>
                 <td th:text="${student.getLastName()}"></td>
@@ -74,7 +74,7 @@
                     <a th:href="@{/eregistrar/student/delete/{id}(id=${student.getStudentId()})}"
                        class="btn btn-danger btn-sm mb-3">Delete</a></td>
             </tr>
-            <tr th:if="${student.isEmpty()}">
+            <tr th:if="${students.isEmpty()}">
                 <td colspan="3" th:align="center"> No student found</td>
             </tr>
             </tbody>
@@ -82,19 +82,19 @@
     </section>
     <section style="margin-top: 1em">
         <!------Pagination----------->
-        <table border="1" cellspacing="5" cellpadding="5">
-            <tbody>
-            <tr>
-                <th scope="row">Pages:</th>
-                <td th:each="pageCount : ${#numbers.sequence(1, students.totalPages)}">
-                    <a th:if="${currentPageNo == pageCount-1}" th:href="@{/eregistrar/student/list(pageNo=${pageCount-1})}"
-                       th:text="${pageCount}" style="padding: 100%; background-color:aqua;"></a>
-                    <a th:if="${currentPageNo != pageCount-1}" th:href="@{/eregistrar/student/list(pageNo=${pageCount-1})}"
-                       th:text="${pageCount}"></a>
-                </td>
-            </tr>
-            </tbody>
-        </table>
+<!--        <table border="1" cellspacing="5" cellpadding="5">-->
+<!--            <tbody>-->
+<!--            <tr>-->
+<!--                <th scope="row">Pages:</th>-->
+<!--                <td th:each="pageCount : ${#numbers.sequence(1, students.totalPages)}">-->
+<!--                    <a th:if="${currentPageNo == pageCount-1}" th:href="@{/eregistrar/student/list(pageNo=${pageCount-1})}"-->
+<!--                       th:text="${pageCount}" style="padding: 100%; background-color:aqua;"></a>-->
+<!--                    <a th:if="${currentPageNo != pageCount-1}" th:href="@{/eregistrar/student/list(pageNo=${pageCount-1})}"-->
+<!--                       th:text="${pageCount}"></a>-->
+<!--                </td>-->
+<!--            </tr>-->
+<!--            </tbody>-->
+<!--        </table>-->
     </section>
 </div>
 </body>

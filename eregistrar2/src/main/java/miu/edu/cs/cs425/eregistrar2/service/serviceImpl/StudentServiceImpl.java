@@ -20,13 +20,26 @@ public class StudentServiceImpl implements StudentService {
 
 @Autowired
    private StudentRepository studentRepo;
-
     @Override
     public Page<Student> getStudents(int pageNo) {
-        return studentRepo.findAll(PageRequest.
-                of(pageNo,4, Sort.Direction.ASC,"firstName","lastName","cgpa"));
-                //(Sort.by(Sort.Direction.ASC,"firstName","lastName","cgpa"));
+        //return studentRepo.findAll();
+        return studentRepo.findAll(PageRequest.of(pageNo,5,
+                Sort.Direction.ASC,"firstName","lastName","cgpa"));
+        //(Sort.by(Sort.Direction.ASC,"firstName","lastName","cgpa"));
     }
+
+    @Override
+    public Page<Student> getPages(int pageNo, int size) {
+        return studentRepo.findAll(PageRequest.of(pageNo, size,
+                Sort.Direction.ASC,"firstName","lastName","cgpa"));
+    }
+
+//    @Override
+//    public List<Student> getStudents(int pageNo) {
+//        return studentRepo.findAll(PageRequest.
+//                of(pageNo,4, Sort.Direction.ASC,"firstName","lastName","cgpa"));
+//                //(Sort.by(Sort.Direction.ASC,"firstName","lastName","cgpa"));
+//    }
 
 //    @Override
 //    public List<Student> searchStudents(String search) {
@@ -60,7 +73,7 @@ public class StudentServiceImpl implements StudentService {
             student.setCgpa(updStudent.getCgpa());
             student.setDateOfEnrollment(updStudent.getDateOfEnrollment());
             student.setIsInternational(updStudent.getIsInternational());
-            studentRepo.save(std);
+            studentRepo.save(student);
         }
         else  throw new NullPointerException("No such Student");
     }

@@ -78,16 +78,17 @@
             </tbody>
         </table>
     </section>
-    <section style="margin-top: 1em">
+
+    <section style="margin-top: 2em">
         <!------Pagination----------->
-        <table border="1" cellspacing="5" cellpadding="5">
+        <table stborder="1" cellspacing="10" cellpadding="10"  style="border-radius: 5px; border: solid gray" >
             <tbody>
             <tr>
-                <th scope="row">Pages:</th>
+                <th scope="row ">Pages:</th>
                 <td th:each="pageCount : ${#numbers.sequence(1, students.totalPages)}">
                     <a th:if="${currentPageNo == pageCount-1}"
                        th:href="@{/eregistrar/student/list(pageNo=${pageCount-1})}"
-                       th:text="${pageCount}" style="padding: 100%; background-color:aqua;"></a>
+                       th:text="${pageCount}" style="padding: 100%; "></a>
                     <a th:if="${currentPageNo != pageCount-1}"
                        th:href="@{/eregistrar/student/list(pageNo=${pageCount-1})}"
                        th:text="${pageCount}"></a>

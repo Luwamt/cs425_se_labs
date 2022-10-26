@@ -1,5 +1,6 @@
 package edu.miu.cs.cs425.eregistrarwebapi.controller;
 
+import edu.miu.cs.cs425.eregistrarwebapi.dto.StudentDto;
 import edu.miu.cs.cs425.eregistrarwebapi.exception.MyException;
 import edu.miu.cs.cs425.eregistrarwebapi.model.Student;
 import edu.miu.cs.cs425.eregistrarwebapi.service.StudentService;
@@ -29,6 +30,15 @@ public class StudentController {
         var student = studentService.getStudentById(stdId);
         return ResponseEntity.ok(student);
     }
+    @GetMapping(value = {"/search"})
+    public ResponseEntity<List<Student>> searchStudentsByName(@RequestParam String search){
+       return ResponseEntity.ok(studentService.searchStudents(search));
+    }
+//    @GetMapping(value = {"/search/{search}"})
+//    public ResponseEntity<List<Student>> searchStudentsByName(@PathVariable String search){
+//        return ResponseEntity.ok(studentService.searchStudents(search));
+//    }
+
 
     @PostMapping(value = {"/register"})//eregistrar/api/student/register
     public ResponseEntity<Student> registerNewStudent(@Valid @RequestBody Student student) {
@@ -36,7 +46,7 @@ public class StudentController {
     }
 
     @PutMapping(value = {"/update/{id}"})
-    public ResponseEntity<Student> updateStudentById(@PathVariable Long id, @Valid @RequestBody Student student) {
+    public ResponseEntity<Student> updateStudentById(@PathVariable Long id, @Valid @RequestBody StudentDto student) {
         return new ResponseEntity<>(studentService.updateStudent(id, student), HttpStatus.OK);
     }
 

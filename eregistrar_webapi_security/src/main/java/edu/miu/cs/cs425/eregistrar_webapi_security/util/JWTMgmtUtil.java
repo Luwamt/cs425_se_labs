@@ -25,7 +25,7 @@ public class JWTMgmtUtil {
     //private String secret ="cs425-swe";
 
     private final  byte[] secret = Base64.getDecoder()
-            .decode("");
+            .decode("jZ5OyIDw8O+HKXZX4z0YtLQWR66Bj80KWV5ruM1ie5Q=");
    public String extractUsername(String token){
        return extractClaim(token, Claims::getSubject);
    }
